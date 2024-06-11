@@ -1,0 +1,179 @@
+fig1, ax1 = plt.subplots(figsize=(14,8))
+
+plt.xlabel(r"$\cos(\theta)$")
+plt.ylabel("Counts")
+
+for part in ['ee','mm','tt']:
+    filename = "../Data/MC/"+part+".root"
+    file = uproot.open(filename)
+    tree = file['h3']
+    
+    Ncharged = np.array(tree['Ncharged'].array())
+    Pcharged = np.array(tree['Pcharged'].array())
+    E_ecal = np.array(tree['E_ecal'].array())
+    E_hcal = np.array(tree['E_hcal'].array())
+    cos_thru = np.array(tree['cos_thru'].array())
+    cos_thet = np.array(tree['cos_thet'].array())
+    
+    ax1.hist(cos_thet,bins=np.linspace(-1,1,50),histtype=u'step', density=True, label = part)
+
+
+    
+#plt.xlim(0,20) 
+#plt.yscale('log')
+plt.title("Theta")
+plt.legend(fontsize = 14)
+
+plt.savefig("Theta.png")
+
+plt.show()
+
+fig1, ax1 = plt.subplots(figsize=(14,8))
+
+plt.xlabel(r"$\cos(\alpha_{\rm{thrust}})$")
+plt.ylabel("Counts")
+
+for part in ['ee','mm','tt', 'qq']:
+    filename = "../Data/MC/"+part+".root"
+    file = uproot.open(filename)
+    tree = file['h3']
+    
+    Ncharged = np.array(tree['Ncharged'].array())
+    Pcharged = np.array(tree['Pcharged'].array())
+    E_ecal = np.array(tree['E_ecal'].array())
+    E_hcal = np.array(tree['E_hcal'].array())
+    cos_thru = np.array(tree['cos_thru'].array())
+    cos_thet = np.array(tree['cos_thet'].array())
+    
+    ax1.hist(cos_thru,bins=np.linspace(-1,1,50),histtype=u'step', density=True, label = part)
+
+
+
+    
+#plt.xlim(0,20) 
+#plt.yscale('log')
+plt.title("Thrust")
+plt.legend(fontsize = 14)
+
+plt.savefig("Thrust.png")
+
+plt.show()
+
+fig1, ax1 = plt.subplots(figsize=(14,8))
+
+plt.xlabel("Energy in the hadronic calorimeter [GeV]")
+plt.ylabel("Counts")
+
+for part in ['ee','mm','tt', 'qq']:
+    filename = "../Data/MC/"+part+".root"
+    file = uproot.open(filename)
+    tree = file['h3']
+    
+    Ncharged = np.array(tree['Ncharged'].array())
+    Pcharged = np.array(tree['Pcharged'].array())
+    E_ecal = np.array(tree['E_ecal'].array())
+    E_hcal = np.array(tree['E_hcal'].array())
+    cos_thru = np.array(tree['cos_thru'].array())
+    cos_thet = np.array(tree['cos_thet'].array())
+    
+    ax1.hist(E_hcal,bins=50,histtype=u'step', density=True, label = part)
+
+
+    
+#plt.xlim(0,20) 
+plt.yscale('log')
+plt.title("HCAL")
+plt.legend(fontsize = 14)
+
+plt.savefig("HCAL.png")
+
+plt.show()
+
+fig1, ax1 = plt.subplots(figsize=(14,8))
+
+plt.xlabel("Energy in the electrocalorimeter [GeV]")
+plt.ylabel("Counts")
+
+for part in ['ee','mm','tt', 'qq']:
+    filename = "../Data/MC/"+part+".root"
+    file = uproot.open(filename)
+    tree = file['h3']
+    
+    Ncharged = np.array(tree['Ncharged'].array())
+    Pcharged = np.array(tree['Pcharged'].array())
+    E_ecal = np.array(tree['E_ecal'].array())
+    E_hcal = np.array(tree['E_hcal'].array())
+    cos_thru = np.array(tree['cos_thru'].array())
+    cos_thet = np.array(tree['cos_thet'].array())
+    
+    ax1.hist(E_ecal,bins=50,histtype=u'step', density=True, label = part)
+
+
+
+
+    
+#plt.xlim(0,20) 
+plt.yscale('log')
+plt.title("ECAL")
+plt.legend(fontsize = 14)
+
+plt.savefig("ECAL.png")
+
+plt.show()
+
+fig1, ax1 = plt.subplots(figsize=(14,8))
+
+plt.xlabel(r"$\log_{10} (P_{\rm{sum}} / \rm{GeV})$")
+plt.ylabel("Counts")
+
+for part in ['ee','mm','tt', 'qq']:
+    filename = "../Data/MC/"+part+".root"
+    file = uproot.open(filename)
+    tree = file['h3']
+    
+    Ncharged = np.array(tree['Ncharged'].array())
+    Pcharged = np.array(tree['Pcharged'].array())
+    E_ecal = np.array(tree['E_ecal'].array())
+    E_hcal = np.array(tree['E_hcal'].array())
+    cos_thru = np.array(tree['cos_thru'].array())
+    cos_thet = np.array(tree['cos_thet'].array())
+    
+    ax1.hist(np.log10(Pcharged+0.01),bins=50,histtype=u'step', density=True, label = part)
+
+    
+#plt.xlim(0,20) 
+plt.yscale('log')
+plt.title("P-charged")
+plt.legend(fontsize = 14)
+
+plt.savefig("P-charged.png")
+
+plt.show()
+
+fig1, ax1 = plt.subplots(figsize=(14,8))
+
+plt.xlabel("Number of charges tracks")
+plt.ylabel("Counts")
+
+for part in ['ee','mm','tt', 'qq']:
+    filename = "../Data/MC/"+part+".root"
+    file = uproot.open(filename)
+    tree = file['h3']
+    
+    Ncharged = np.array(tree['Ncharged'].array())
+    Pcharged = np.array(tree['Pcharged'].array())
+    E_ecal = np.array(tree['E_ecal'].array())
+    E_hcal = np.array(tree['E_hcal'].array())
+    cos_thru = np.array(tree['cos_thru'].array())
+    cos_thet = np.array(tree['cos_thet'].array())
+    
+    ax1.hist(Ncharged,bins=50,histtype=u'step', density=True, label = part)
+    
+#plt.xlim(0,20) 
+plt.yscale('log')
+plt.title("N-charged")
+plt.legend(fontsize = 14)
+
+plt.savefig("N-charged.png")
+
+plt.show()
