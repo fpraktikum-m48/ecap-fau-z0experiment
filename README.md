@@ -6,7 +6,7 @@ Rodrigo Guedes Lang (rodrigo.lang@fau.de)
 Pedro Ivo Silva Batista (pedro.batista@fau.de)
 
 # Prerequisites
-
+dadiaodiapdoaidpoisad
 1. A [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installation.
 
 2. In order to ensure a proper installation of all the dependecies required, we recommend a conda installation, like [anaconda](https://docs.anaconda.com/free/anaconda/install/) or [mamba](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html).
